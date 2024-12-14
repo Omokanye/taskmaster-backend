@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: taskmaster-backend
+    env: node
+    buildCommand: npm install
+    startCommand: node backend/server.js
+    branch: main
+    plan: free  # Or choose another plan, such as Starter or Pro, depending on your needs
+    envVars:
+      - key: JWT_SECRET
+        value: <your-secret-key>
+    healthCheckPath: /  # Adjust if necessary
